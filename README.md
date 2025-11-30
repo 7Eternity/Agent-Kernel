@@ -60,20 +60,20 @@
 ## 📍 Table of Contents
 
 - [✨ Core Advantages: Why Choose Agent-Kernel?](#-core-advantages-why-choose-agent-kernel)
-  - [Adaptability](#-adaptability)
-  - [Configurability](#-configurability)
-  - [Reliability](#-reliability)
-  - [Reusability](#-reusability)
+  - [Adaptability](#1-adaptability)
+  - [Configurability](#2-configurability)
+  - [Reliability](#3-reliability)
+  - [Reusability](#4-reusability)
 - [🎬 Showcase](#-showcase)
-  - [Universe 25 Experiment](#-universe-25-experiment)
-  - [ZJU Campus Life](#-zju-campus-life)
+  - [Universe 25 Experiment](#1-universe-25-experiment)
+  - [ZJU Campus Life](#2-zju-campus-life)
 - [🏛️ Architecture and Design](#-architecture-and-design)
-  - [Framework Overview](#-framework-overview)
-  - [Software Design](#-software-design)
+  - [Framework Overview](#1-framework-overview)
+  - [Software Design](#2-software-design)
 - [🚀 QuickStart](#️-quickstart)
-  - [1. Requirements](#1-requirements)
-  - [2. Clone and setup environment](#2-clone-and-setup-environment)
-  - [3. Choose a package to install](#3-choose-a-package-to-install)
+  - [Requirements](#1-requirements)
+  - [Clone and setup environment](#2-clone-and-setup-environment)
+  - [Choose a package to install](#3-choose-a-package-to-install)
 - [📂 Project Structure](#-project-structure)
 - [🎓 Citation](#-citation)
 - [🤝 Contributors](#-contributors)
@@ -83,19 +83,19 @@
 
 Agent-Kernel offers four core advantages for social simulation, making it stand out in the study of multi-agent systems:
 
-### • Adaptability
+### 1. Adaptability
 
 Agent-Kernel supports adding/removing agents, changing environments, and modifying behaviors at runtime. This enables simulations to naturally reflect population flow, environmental shifts, and evolving behavioral patterns.
 
-### • Configurability
+### 2. Configurability
 
 With the Controller module, Agent-Kernel allows real-time adjustments to parameters or events during simulation. This makes it easy to test and validate complex sociological hypotheses.
 
-### • Reliability
+### 3. Reliability
 
 Agent-Kernel employs a strict system-level verification mechanism, validating every agent action. This ensures that simulation behaviors follow physical and social rules, maintaining scientific rigor.
 
-### • Reusability
+### 4. Reusability
 
 Agent-Kernel uses a standardized, plugin-based modular design. Codes can be reused across scenarios, significantly accelerating research iteration.
 
@@ -103,7 +103,7 @@ Agent-Kernel uses a standardized, plugin-based modular design. Codes can be reus
 
 Agent-Kernel has been successfully applied to several complex social simulation scenarios:
 
-### • Universe 25 Experiment
+### 1. Universe 25 Experiment
 
 Simulating the famous "Universe 25" sociological experiment to explore the relationships between population density, social structure, and behavioral anomalies.
 
@@ -111,7 +111,7 @@ Simulating the famous "Universe 25" sociological experiment to explore the relat
   <img src="assets/rat.jpg" alt="Universe 25 Experiment" width="700"/>
 </div>
 
-### • ZJU Campus Life
+### 2. ZJU Campus Life
 
 Constructing a high-fidelity simulation of the campus environment to study pedestrian flow dynamics, resource allocation, and social interaction patterns.
 
@@ -121,7 +121,7 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
 
 ## 🏛️Architecture and Design
 
-### • Framework Overview
+### 1. Framework Overview
 
 The Agent-Kernel framework adopts a modular microkernel architecture, with a core system—composed of the **Agent**, **Environment**, **Action**, **Controller**, and **System** modules—and multiple plugins. The core manages plugin registration and asynchronous communication, while plugins provide the specialized functions for social simulation, as shown in the diagram below:
 
@@ -131,7 +131,7 @@ The Agent-Kernel framework adopts a modular microkernel architecture, with a cor
 
 </p>
 
-### • Software Design
+### 2. Software Design
 
 To realize the core design goals of the Agent-Kernel framework, we made a series of deliberate software design decisions, as illustrated in the diagram below:
 
