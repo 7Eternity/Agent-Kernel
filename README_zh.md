@@ -18,7 +18,7 @@
     <a href="https://www.agent-kernel.tech/">
         <img alt="Homepage" src="https://img.shields.io/badge/Homepage-Website-1f4b99?logo=home&logoColor=white">
     </a>
-    <a href="[YOUR_PAPER_URL]">
+    <a href="https://github.com/ZJU-LLMs/Agent-Kernel">
         <img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg?logo=arxiv&logoColor=white">
     </a>
     <!-- Community -->
@@ -70,10 +70,11 @@
 - [🏛️ 架构与设计](#️-架构与设计)
   - [框架总览](#1-框架总览)
   - [软件设计](#2-软件设计)
-- [🚀 快速入门](#️-快速入门)
+- [🚀 快速入门](#-快速入门)
   - [环境要求](#1-环境要求)
   - [克隆并设置环境](#2-克隆并设置环境)
   - [选择要安装的包](#3-选择要安装的包)
+  - [（可选）启动 Society-Panel](#4-可选启动-society-panel)
 - [📂 项目结构](#-项目结构)
 - [🎓 引用](#-引用)
 - [🤝 贡献者](#-贡献者)
@@ -225,6 +226,32 @@ uv pip install -e .
 ```bash
 uv run python -m examples.standalone_test.run_simulation
 ```
+
+### 4. （可选）启动 Society-Panel
+
+Society-Panel 是一个基于网页的控制面板，可以帮助您可视化地配置、部署和监控模拟。
+
+1.  **启动面板：**
+    使用项目提供的启动脚本来启动整个应用（后端 + 前端界面）。**这些脚本会自动检查并安装所有必需的依赖，您无需手动配置环境。**
+
+    - **在 Linux/macOS 上：**
+
+      ```bash
+      # 授予执行权限（仅首次需要）
+      chmod +x scripts/start_society_panel.sh
+      ./scripts/start_society_panel.sh
+      ```
+
+    - **在 Windows 上：**
+      ```bash
+      scripts\start_society_panel.bat
+      ```
+
+2.  **访问界面：**
+    当脚本确认服务已成功运行后，打开您的浏览器并访问：
+    **`http://localhost:5173`**
+
+通过该面板，您可以上传自定义代码包、通过图形化界面编辑配置文件，并控制模拟的生命周期。要关闭面板及所有相关服务，只需在运行脚本的终端窗口中按下 `Ctrl+C` 即可。
 
 ## 📂 项目结构
 

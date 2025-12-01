@@ -8,17 +8,23 @@
 
 <div align="center">
     <!-- Core Metrics -->
+    <!-- <a href="https://github.com/ZJU-LLMs/Agent-Kernel/stargazers">
+        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?label=Stars&logo=github&color=brightgreen">
+    </a> -->
     <a href="https://github.com/ZJU-LLMs/Agent-Kernel/stargazers">
         <img alt="GitHub Stars" src="https://img.shields.io/github/stars/ZJU-LLMs/Agent-Kernel?style=social">
     </a>
+    <!-- <a href="https://github.com/ZJU-LLMs/Agent-Kernel/releases">
+        <img alt="Version" src="https://img.shields.io/github/v/release/ZJU-LLMs/Agent-Kernel?color=blue&label=Version">
+    </a> -->
     <a href="https://github.com/ZJU-LLMs/Agent-Kernel/releases">
         <img alt="Version" src="https://img.shields.io/badge/Version-1.0.0-blue">
     </a>
     <!-- Project Resources -->
-    <a href="https://www.agent-kernel.tech/">
+    <a href="https://www.agent-kernel.tech">
         <img alt="Homepage" src="https://img.shields.io/badge/Homepage-Website-1f4b99?logo=home&logoColor=white">
     </a>
-    <a href="[YOUR_PAPER_URL]">
+    <a href="https://github.com/ZJU-LLMs/Agent-Kernel">
         <img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg?logo=arxiv&logoColor=white">
     </a>
     <!-- Community -->
@@ -67,13 +73,14 @@
 - [🎬 Showcase](#-showcase)
   - [Universe 25 Experiment](#1-universe-25-experiment)
   - [ZJU Campus Life](#2-zju-campus-life)
-- [🏛️ Architecture and Design](#-architecture-and-design)
+- [🏛️ Architecture and Design](#️-architecture-and-design)
   - [Framework Overview](#1-framework-overview)
   - [Software Design](#2-software-design)
-- [🚀 QuickStart](#️-quickstart)
+- [🚀 QuickStart](#-quickstart)
   - [Requirements](#1-requirements)
   - [Clone and setup environment](#2-clone-and-setup-environment)
   - [Choose a package to install](#3-choose-a-package-to-install)
+  - [(Optional) Start Society-Panel](#4-optional-start-society-panel)
 - [📂 Project Structure](#-project-structure)
 - [🎓 Citation](#-citation)
 - [🤝 Contributors](#-contributors)
@@ -119,7 +126,7 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
  <img src="assets/zju.png" alt="ZJU Campus Life" width="700"/>
 </div>
 
-## 🏛️Architecture and Design
+## 🏛️ Architecture and Design
 
 ### 1. Framework Overview
 
@@ -225,6 +232,32 @@ Run the standalone example:
 ```bash
 uv run python -m examples.standalone_test.run_simulation
 ```
+
+### 4. (Optional) Start Society-Panel
+
+Society-Panel is a web-based control panel to help you configure, deploy, and monitor your simulations visually.
+
+1.  **Launch the panel:**
+    Use the provided startup scripts to launch the entire application stack (backend + UI). **These scripts will automatically check for and install all required dependencies, so no manual environment setup is needed.**
+
+    - **On Linux/macOS:**
+
+      ```bash
+      # Grant execution permission (first time only)
+      chmod +x scripts/start_society_panel.sh
+      ./scripts/start_society_panel.sh
+      ```
+
+    - **On Windows:**
+      ```bash
+      scripts\start_society_panel.bat
+      ```
+
+2.  **Access the UI:**
+    Once the script confirms that the services are running, open your browser and navigate to:
+    **`http://localhost:5173`**
+
+From the panel, you can upload custom code packages, edit configuration files through a graphical interface, and control the simulation lifecycle. To shut down the panel and all related services, simply press `Ctrl+C` in the terminal where you ran the script.
 
 ## 📂 Project Structure
 
