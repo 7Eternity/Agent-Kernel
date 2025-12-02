@@ -11,7 +11,7 @@
 
 ---
 
-## 🚀 QuickStart
+## 🚀 Quick Start
 
 ### 1. Requirements
 
@@ -31,7 +31,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 pip install uv
 ```
 
-### 2. Clone and setup environment
+### 2. Clone and activate environment
 
 ```bash
 git clone https://github.com/ZJU-LLMs/Agent-Kernel.git

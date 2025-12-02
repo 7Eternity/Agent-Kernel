@@ -24,7 +24,7 @@
     <a href="https://www.agent-kernel.tech">
         <img alt="Homepage" src="https://img.shields.io/badge/Homepage-Website-1f4b99?logo=home&logoColor=white">
     </a>
-    <a href="https://github.com/ZJU-LLMs/Agent-Kernel">
+    <a href="https://arxiv.org/abs/2512.01610">
         <img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg?logo=arxiv&logoColor=white">
     </a>
     <!-- Community -->
@@ -59,7 +59,7 @@
 
 ---
 
-# Agent-Kernel
+# Agent-Kernel: Explore the Scaling Law of Collective Intelligence
 
 **Agent-Kernel** is a Multi-Agent System (MAS) framework featuring a novel society-centric modular microkernel architecture, designed to support agent-based social simulation in both distributed and standalone environments.
 
@@ -76,9 +76,9 @@
 - [🏛️ Architecture and Design](#️-architecture-and-design)
   - [Framework Overview](#1-framework-overview)
   - [Software Design](#2-software-design)
-- [🚀 QuickStart](#-quickstart)
+- [🚀 Quick Start](#-quick-start)
   - [Requirements](#1-requirements)
-  - [Clone and setup environment](#2-clone-and-setup-environment)
+  - [Clone and activate environment](#2-clone-and-activate-environment)
   - [Choose a package to install](#3-choose-a-package-to-install)
   - [(Optional) Start Society-Panel](#4-optional-start-society-panel)
 - [📂 Project Structure](#-project-structure)
@@ -130,7 +130,7 @@ Constructing a high-fidelity simulation of the campus environment to study pedes
 
 ### 1. Framework Overview
 
-The Agent-Kernel framework adopts a modular microkernel architecture, with a core system—composed of the **Agent**, **Environment**, **Action**, **Controller**, and **System** modules—and multiple plugins. The core manages plugin registration and asynchronous communication, while plugins provide the specialized functions for social simulation, as shown in the diagram below:
+The Agent-Kernel framework adopts a modular microkernel architecture, with a core system—composed of the **Agent**, **Environment**, **Action**, **Controller**, and **System** modules—and multiple plugins. The core manages plugin registration, behavior verification, asynchronous communication, and other core responsibilities, while plugins provide the specialized functions for social simulation, as shown in the diagram below:
 
 <p align="center">
 
@@ -148,7 +148,7 @@ To realize the core design goals of the Agent-Kernel framework, we made a series
 
 </p>
 
-## 🚀 QuickStart
+## 🚀 Quick Start
 
 ### 1. Requirements
 
@@ -168,7 +168,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 pip install uv
 ```
 
-### 2. Clone and setup environment
+### 2. Clone and activate environment
 
 ```bash
 git clone https://github.com/ZJU-LLMs/Agent-Kernel.git
@@ -182,7 +182,7 @@ source .venv/bin/activate
 
 ### 3. Choose a package to install
 
-You can work with either distributed or standalone package.
+You can work with either **distributed** or **standalone** package.
 
 Both support optional extras:
 
@@ -205,7 +205,7 @@ uv pip install -e .
 # uv pip install -e ".[all]"
 ```
 
-- The distributed package depends on **ray** and will install it automatically.
+- The distributed package depends on **Ray** and will install it automatically.
 - **No manual Ray cluster startup is required** for local usage.
 
 Run the distributed example:
@@ -255,7 +255,7 @@ Society-Panel is a web-based control panel to help you configure, deploy, and mo
 
 2.  **Access the UI:**
     Once the script confirms that the services are running, open your browser and navigate to:
-    **`http://localhost:5173`**
+    **`http://localhost:5174`**
 
 From the panel, you can upload custom code packages, edit configuration files through a graphical interface, and control the simulation lifecycle. To shut down the panel and all related services, simply press `Ctrl+C` in the terminal where you ran the script.
 
@@ -264,12 +264,16 @@ From the panel, you can upload custom code packages, edit configuration files th
 ```
 MAS/
 ├── packages/
-│   ├── agentkernel-distributed/   # Distributed version (installs ray automatically)
+│   ├── agentkernel-distributed/   # Distributed version (installs Ray automatically)
 │   └── agentkernel-standalone/    # Local single-machine version
 │
 ├── examples/
-│   ├── distributed_test/
-│   └── standalone_test/
+│   ├── distributed_test/          # Example for the distributed version (Ray)
+│   └── standalone_test/           # Example for the local standalone version
+│
+├── society-panel/
+│   ├── backend/                   # FastAPI backend service
+│   └── frontend/                  # Vue 3 + Vite frontend
 │
 └── README.md
 ```
@@ -279,12 +283,14 @@ MAS/
 If you use Agent-Kernel in your research, please consider citing our paper:
 
 ```
-@article{agentkernel2025,
-  title={Agent-Kernel: A MicroKernel Multi-Agents System Framework for Adaptive Social Simulation based on LLMs},
-  author={Author, Lead and Author, Co and Author, Co},
-  journal={Journal of Simulation},
-  year={2025},
-  publisher={Publisher}
+@misc{mao2025agentkernelmicrokernelmultiagentframework,
+      title={Agent-Kernel: A MicroKernel Multi-Agent System Framework for Adaptive Social Simulation Powered by LLMs},
+      author={Yuren Mao and Peigen Liu and Xinjian Wang and Rui Ding and Jing Miao and Hui Zou and Mingjie Qi and Wanxiang Luo and Longbin Lai and Kai Wang and Zhengping Qian and Peilun Yang and Yunjun Gao and Ying Zhang},
+      year={2025},
+      eprint={2512.01610},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2512.01610},
 }
 ```
 

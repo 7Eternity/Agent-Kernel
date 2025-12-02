@@ -18,7 +18,7 @@
     <a href="https://www.agent-kernel.tech/">
         <img alt="Homepage" src="https://img.shields.io/badge/Homepage-Website-1f4b99?logo=home&logoColor=white">
     </a>
-    <a href="https://github.com/ZJU-LLMs/Agent-Kernel">
+    <a href="https://arxiv.org/abs/2512.01610">
         <img alt="Paper" src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg?logo=arxiv&logoColor=white">
     </a>
     <!-- Community -->
@@ -53,7 +53,7 @@
 
 ---
 
-# Agent-Kernel
+# Agent-Kernel: Explore the Scaling Law of Collective Intelligence
 
 **Agent-Kernel** 是一个多智能体系统 (Multi-Agent System, MAS) 框架，其开创了一种以社会为中心的模块化微内核架构，旨在为分布式和单机环境下的社会模拟提供支持。
 
@@ -72,7 +72,7 @@
   - [软件设计](#2-软件设计)
 - [🚀 快速入门](#-快速入门)
   - [环境要求](#1-环境要求)
-  - [克隆并设置环境](#2-克隆并设置环境)
+  - [克隆并激活环境](#2-克隆并激活环境)
   - [选择要安装的包](#3-选择要安装的包)
   - [（可选）启动 Society-Panel](#4-可选启动-society-panel)
 - [📂 项目结构](#-项目结构)
@@ -124,7 +124,7 @@ Agent-Kernel 已成功应用于多个复杂的社会模拟场景：
 
 ### 1. 框架总览
 
-Agent-Kernel 框架采用模块化微内核架构，包含一个由 **Agent**、**Environment**、**Action**、**Controller** 和 **System** 模块组成的核心系统以及多个插件。其中核心系统负责注册插件和异步通信，而插件则提供社会模拟所需的专业功能，如下图所示：
+Agent-Kernel 框架采用模块化微内核架构，包含一个由 **Agent**、**Environment**、**Action**、**Controller** 和 **System** 模块组成的核心系统以及多个插件。其中核心系统负责注册插件、行为审查、异步通信以及其他关键职责，而插件则提供社会模拟所需的具体功能，如下图所示：
 
 <p align="center">
 
@@ -162,7 +162,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 pip install uv
 ```
 
-### 2. 克隆并设置环境
+### 2. 克隆并激活环境
 
 ```bash
 git clone https://github.com/ZJU-LLMs/Agent-Kernel.git
@@ -176,7 +176,7 @@ source .venv/bin/activate
 
 ### 3. 选择要安装的包
 
-您可以选择使用分布式包或单机包。
+您可以选择使用**分布式**包或**单机**包。
 
 两者都支持可选的附加功能：
 
@@ -249,7 +249,7 @@ Society-Panel 是一个基于网页的控制面板，可以帮助您可视化地
 
 2.  **访问界面：**
     当脚本确认服务已成功运行后，打开您的浏览器并访问：
-    **`http://localhost:5173`**
+    **`http://localhost:5174`**
 
 通过该面板，您可以上传自定义代码包、通过图形化界面编辑配置文件，并控制模拟的生命周期。要关闭面板及所有相关服务，只需在运行脚本的终端窗口中按下 `Ctrl+C` 即可。
 
@@ -258,12 +258,16 @@ Society-Panel 是一个基于网页的控制面板，可以帮助您可视化地
 ```
 MAS/
 ├── packages/
-│   ├── agentkernel-distributed/   # 分布式版本 (自动安装 ray)
+│   ├── agentkernel-distributed/   # 分布式版本 (自动安装 Ray)
 │   └── agentkernel-standalone/    # 本地单机版本
 │
 ├── examples/
-│   ├── distributed_test/
-│   └── standalone_test/
+│   ├── distributed_test/          # 分布式版本 (Ray) 示例
+│   └── standalone_test/           # 本地单机版本示例
+│
+├── society-panel/
+│   ├── backend/                   # FastAPI 后端服务
+│   └── frontend/                  # Vue 3 + Vite 前端
 │
 └── README.md
 ```
@@ -273,12 +277,14 @@ MAS/
 如果您在研究中使用了 Agent-Kernel，请考虑引用我们的论文：
 
 ```
-@article{agentkernel2025,
-  title={Agent-Kernel: A MicroKernel Multi-Agents System Framework for Adaptive Social Simulation based on LLMs},
-  author={Author, Lead and Author, Co and Author, Co},
-  journal={Journal of Simulation},
-  year={2025},
-  publisher={Publisher}
+@misc{mao2025agentkernelmicrokernelmultiagentframework,
+      title={Agent-Kernel: A MicroKernel Multi-Agent System Framework for Adaptive Social Simulation Powered by LLMs},
+      author={Yuren Mao and Peigen Liu and Xinjian Wang and Rui Ding and Jing Miao and Hui Zou and Mingjie Qi and Wanxiang Luo and Longbin Lai and Kai Wang and Zhengping Qian and Peilun Yang and Yunjun Gao and Ying Zhang},
+      year={2025},
+      eprint={2512.01610},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2512.01610},
 }
 ```
 
